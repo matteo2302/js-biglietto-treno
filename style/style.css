@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  width: 1250px;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.trenitalia {
+  margin-top: 300px;
+  border: 1px solid lightgray;
+}
+h4 {
+  background-color: rgb(207, 0, 40);
+  font-size: 20px;
+}
