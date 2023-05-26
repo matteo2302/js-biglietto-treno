@@ -11,4 +11,8 @@ let price = ticket;
 if (age < 18) {
   price = ticket - (ticket / 100) * 20;
 }
+
+if (age > 65) {
+  price = ticket - (ticket / 100) * 40;
+}
 console.log("il tuo biglietto costa", price.toFixed(2), "euro");
