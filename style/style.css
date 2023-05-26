@@ -13,9 +13,18 @@
 }
 .trenitalia {
   margin-top: 300px;
-  border: 1px solid lightgray;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+  background-color: rgb(207, 0, 40);
 }
 h4 {
-  background-color: rgb(207, 0, 40);
+  padding: 10px 0;
   font-size: 20px;
+}
+.img-box {
+  overflow: hidden;
+}
+.informations-box {
+  background-color: white;
+  padding: 0 10px;
 }
