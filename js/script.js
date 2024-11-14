@@ -1,15 +1,26 @@
 console.log("JS OK");
-//step 0
-const yourTicketPlaceholder = document.getElementById("your-ticket");
-const yourAgePlaceholder = document.getElementById("your-age");
-const yourDistancePlaceholder = document.getElementById("your-distance");
 const realPricePlaceholder = document.getElementById("real-price");
-const age = prompt("quanti anni hai?", 68);
-console.log(age);
-const distance = prompt("quanti km desidera percorrere?", 513);
-console.log(distance);
+
+/*passo alla prossima pagina e passo dei dati*/
+function vaiAllaProssimaPagina() {
+  // Prendo i valori dai campi del form
+  const name = document.getElementById('nameInput').value;
+  const age = document.getElementById('ageInput').value;
+  const distance = document.getElementById('distanceInput').value;
+
+  const url = `biglietto.html?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&distance=${encodeURIComponent(distance)}`;
+  window.location.href = url;
+}
+
+const params = new URLSearchParams(window.location.search);
+const username = params.get('name');
+const age = parseInt(params.get('age'));
+const distance = parseFloat(params.get('distance'));
+
+
 let ticket = distance * 0.21;
-console.log(ticket);
+
+
 let price = ticket;
 //steps from 1 to 4
 if (age < 18) {
@@ -20,7 +31,7 @@ if (age > 65) {
 }
 console.log("il tuo biglietto costa", price.toFixed(2), "euro");
 //bonus
-yourTicketPlaceholder.innerText = price.toFixed(2);
-yourAgePlaceholder.innerText = age;
-yourDistancePlaceholder.innerText = distance;
+document.getElementById("your-name").innerText =username;
+document.getElementById('your-age').innerText = age;
+document.getElementById('your-distance').innerText = distance;
 realPricePlaceholder.innerText = ticket.toFixed(2);
