@@ -1,22 +1,16 @@
 console.log("JS OK");
 const realPricePlaceholder = document.getElementById("real-price");
-
-/*passo alla prossima pagina e passo dei dati*/
-function vaiAllaProssimaPagina() {
-  // Prendo i valori dai campi del form
-  const name = document.getElementById('nameInput').value;
-  const age = document.getElementById('ageInput').value;
-  const distance = document.getElementById('distanceInput').value;
-
-  const url = `biglietto.html?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&distance=${encodeURIComponent(distance)}`;
-  window.location.href = url;
-}
-
+const GetTicket = document.getElementById("getTicket")
+/*test*/
+console.log("jsok")
 const params = new URLSearchParams(window.location.search);
 const username = params.get('name');
 const age = parseInt(params.get('age'));
 const distance = parseFloat(params.get('distance'));
 
+console.log("Username:", username);
+console.log("Age:", age);
+console.log("Distance:", distance);
 
 let ticket = distance * 0.21;
 
@@ -35,3 +29,15 @@ document.getElementById("your-name").innerText =username;
 document.getElementById('your-age').innerText = age;
 document.getElementById('your-distance').innerText = distance;
 realPricePlaceholder.innerText = ticket.toFixed(2);
+/*passo alla prossima pagina e passo dei dati*/
+GetTicket.addEventListener('click', (e) => {
+  // Prendo i valori dai campi del form
+  const name = document.getElementById('nameInput').value;
+  const age = document.getElementById('ageInput').value;
+  const distance = document.getElementById('distanceInput').value;
+
+  const url = `biglietto.html?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&distance=${encodeURIComponent(distance)}`;
+  window.location.href = url;
+});
+
+

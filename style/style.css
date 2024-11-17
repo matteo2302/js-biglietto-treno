@@ -35,10 +35,12 @@ header{
   font-size: 20px;
   padding-left: 20px;
   padding-right: 30px;
+  margin-bottom: 35px;
 }
 ul{
   list-style: none;
 }
 li{
   padding-right: 20px;
+  margin-top: 10px;
 }
